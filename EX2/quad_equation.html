@@ -1,0 +1,22 @@
+<html>
+    <title>Quadratic equation</title>
+    <head>
+        <script type="text/javascript">
+            function Roots(){
+                var a = prompt("ENTER THE VALUE OF A","-1");
+                var b = prompt("ENTER THE VALUE OF B","-1");
+                var c = prompt("ENTER THE VALUE OF C","4");
+                var root_part = Math.sqrt(b*b - 4 * a* c);
+                var deno = 2 * a;
+                var root1 = (-b +root_part) / deno;
+                var root2 = (-b -root_part) / deno;
+                document.write("1st root " + root1 + "<br>");
+                document.write("2nd root " + root2 + "<br>");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculate the Quadratic equation </h1>
+        <input type="button" onclick="Roots()" value="Root Calculator">
+    </body>
+</html>
