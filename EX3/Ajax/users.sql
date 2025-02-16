@@ -1,0 +1,8 @@
+CREATE DATABASE ajax_demo;
+USE ajax_demo;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL
+);
