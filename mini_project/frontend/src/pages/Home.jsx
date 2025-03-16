@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <Navbar />
       <Banner />
-      <ProductList />
+      <ProductList category="home"/>
       <ShopServices />
       <NewandTrending />
       <Footer />

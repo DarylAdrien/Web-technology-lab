@@ -10,7 +10,7 @@ import skincare from "../assets/services_img/skincare.png";
 
 // Service data
 const servicesList = [
-  { id: 1, name: "Best-Sellers", image: bestSellers, link: "/best-sellers" },
+  { id: 1, name: "Best-Sellers", image: bestSellers, link: "/best_seller" },
   { id: 2, name: "New", image: newArrivals, link: "/new" },
   { id: 3, name: "Lips", image: lips, link: "/lips" },
   { id: 4, name: "Face", image: face, link: "/face" },

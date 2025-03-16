@@ -8,9 +8,8 @@ const Footer = () => {
     >
       <div className="container">
         <div className="row">
-          {/* Your M·A·C Store */}
           <div className="col-md-3">
-            <h6 className="fw-bold">YOUR M·A·C STORE</h6>
+            <h6 className="fw-bold">YOUR Lush Dew STORE</h6>
             <ul className="list-unstyled">
               <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Find a Store / Event</a></li>
               <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Makeup Services</a></li>
@@ -35,8 +34,8 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Our Story</a></li>
               <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Careers</a></li>
-              <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>M·A·C Cares</a></li>
-              <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Back to M·A·C</a></li>
+              <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}> Lush Dew Cares</a></li>
+              <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Back to Lush Dew</a></li>
             </ul>
           </div>
 
@@ -44,7 +43,7 @@ const Footer = () => {
           <div className="col-md-3">
             <h6 className="fw-bold">YOUR ACCOUNT</h6>
             <ul className="list-unstyled">
-              <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>My M·A·C</a></li>
+              <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>My Lush Dew</a></li>
               <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>Order Status</a></li>
               <li><a href="#" className="text-decoration-none" style={{ color: "#bbb" }}>My Favourites</a></li>
             </ul>
@@ -63,7 +62,7 @@ const Footer = () => {
 
         {/* Bottom Links */}
         <div className="text-center mt-4">
-          <p className="mb-0">© MAKE-UP ART COSMETICS. ALL WORLDWIDE RIGHTS RESERVED.</p>
+          <p className="mb-0">© LUSH DEW ART COSMETICS. ALL WORLDWIDE RIGHTS RESERVED.</p>
           <small>
             <a href="#" className="text-decoration-none me-3" style={{ color: "#bbb" }}>Privacy</a>
             <a href="#" className="text-decoration-none me-3" style={{ color: "#bbb" }}>Terms & Conditions</a>

@@ -1,0 +1,26 @@
+# Byte-compiled / binary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+
+# Environment variables and secrets
+.env
+config/settings_local.py
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Python package dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+
+

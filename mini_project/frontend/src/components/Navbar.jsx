@@ -1,25 +1,54 @@
 import React from "react";
+import logo from "../assets/logo_cosmetic_processed.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style={{height:"80px"}}>
         <div className="container-fluid d-flex align-items-center">
             {/* Logo */}
-            <a className="navbar-brand fw-bold fs-3" href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/MAC_Cosmetics_logo.svg" 
-                alt="Cosmetic Logo" height="30"/>
+            <a className="navbar-brand fw-bold fs-3" href="/">
+            <img src= {logo}
+                alt="Cosmetic Logo" width="200" height="80"/>
             </a>
 
             {/* Navbar Links */}
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">BEST-SELLERS 🔥</a></li>
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">NEW</a></li>
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">LIPS</a></li>
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">FACE</a></li>
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">EYES</a></li>
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">SKINCARE</a></li>
-                <li className="nav-item"><a className="nav-link fw-bold text-dark mx-2" href="#">SERVICE</a></li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/best_seller">
+                        BEST-SELLERS 🔥
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/new">
+                       NEW
+                    </Link></li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/lips">
+                        LIPS
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/face">
+                        FACE       
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/eyes">
+                        EYES
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/skincare">
+                        SKINCARE
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link fw-bold text-dark mx-2" to="/service">
+                        SERVICE
+                    </Link>
+                </li>
             </ul>
             </div>
 
