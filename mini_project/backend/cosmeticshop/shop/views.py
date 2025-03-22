@@ -1,15 +1,19 @@
 # from rest_framework.decorators import api_view, permission_classes
 # from rest_framework.permissions import IsAuthenticated
-# from rest_framework.response import Response
-# from rest_framework import status
-# from django.shortcuts import get_object_or_404
-from .models import Product
+from rest_framework.response import Response
+from rest_framework import status
+from django.shortcuts import get_object_or_404
+from .models import Product 
 # , CartItem, WishlistItem, Review
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer ,CustomTokenObtainPairSerializer , UserSerializer
 # , CartItemSerializer, WishlistItemSerializer, ReviewSerializer , UserSerializer
-# from rest_framework.permissions import IsAuthenticated, AllowAny
-# from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .models import UserRole
 
 
 
@@ -45,9 +49,66 @@ def product_list(request):
     serializer = ProductSerializer(products, many=True)
     return JsonResponse(serializer.data, safe=False)
 
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    serializer = ProductSerializer(product)
+    print(serializer)
+    return JsonResponse(serializer.data, safe=False)
 
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def create_user(request):
+    
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_user_info(request):
+    user = request.user
+
+    # Retrieve user's role from UserRole model
+    user_role = UserRole.objects.filter(user=user).first()
+    role = user_role.role if user_role else "normal"  # Default to "normal" if no role is assigned
+
+    print(role)
+
+    data = {
+        'username': user.username,
+        'role': role
+    }
+    return Response(data)
+
+# @method_decorator(csrf_exempt, name='dispatch')
+# def favorite_list_create(request):
+#     """Handles listing and creating favorite items."""
+#     if request.method == "GET":
+#         favorites = Favorite.objects.filter(user=request.user)
+#         serializer = FavoriteSerializer(favorites, many=True)
+#         return JsonResponse(serializer.data, safe=False)
+    
+#     elif request.method == "POST":
+#         data = json.loads(request.body)
+#         serializer = FavoriteSerializer(data=data)
+#         if serializer.is_valid():
+#             serializer.save(user=request.user)
+#             return JsonResponse(serializer.data, status=201)
+#         return JsonResponse(serializer.errors, status=400)
+
+# @method_decorator(csrf_exempt, name='dispatch')
+# def favorite_delete(request, pk):
+#     """Handles deleting a favorite item."""
+#     if request.method == "DELETE":
+#         favorite = get_object_or_404(Favorite, id=pk, user=request.user)
+#         favorite.delete()
+#         return JsonResponse({"message": "Favorite deleted successfully"}, status=204)
+
+#     return JsonResponse({"error": "Method not allowed"}, status=405)
 
 # @api_view(['GET', 'POST'])
 # def product_list(request):

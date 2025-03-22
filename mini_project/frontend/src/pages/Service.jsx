@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Makeuppic from "../assets/makeup_service.png";
 import Bannerimg from "../assets/banner_black.png";
+import GoogleMapEmbed from "../components/GoogleMapEmbed";
 
 const Service = () => {
     return (
@@ -30,6 +31,8 @@ const Service = () => {
                     
                 </div>
                     <br />
+
+                    <GoogleMapEmbed />
                 <h1 className="text-center fw-bold" style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem" }}>
                     MAKEUP SERVICE
                 </h1>

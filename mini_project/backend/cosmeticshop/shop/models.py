@@ -1,5 +1,6 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.contrib.auth.models import User
 
 class Product(models.Model):
     CATEGORY_CHOICES = [
@@ -25,6 +26,31 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+class UserRole(models.Model):
+    ROLE_CHOICES = [
+        ('premium', 'Premium'),
+        ('normal', 'Normal'),
+    ]
+    
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.get_role_display()}"
+
+
+
+# class Favorite(models.Model):
+#     # user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     item_name = models.CharField(max_length=255)
+#     item_url = models.URLField(blank=True, null=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return self.item_name
+
+
 
 # class CartItem(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)

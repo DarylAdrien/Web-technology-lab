@@ -30,7 +30,7 @@ const ShopServices = () => {
                 src={service.image}
                 alt={service.name}
                 className="img-fluid rounded-circle shadow-sm"
-                style={{ width: "120px", height: "120px", objectFit: "cover" }}
+                style={{ width: "130px", height: "130px", objectFit: "cover" }}
               />
               <p className="mt-2 fw-medium">{service.name}</p>
             </a>

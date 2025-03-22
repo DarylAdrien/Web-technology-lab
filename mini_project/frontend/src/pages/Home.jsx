@@ -6,10 +6,17 @@ import ProductList from "../components/ProductList";
 import ShopServices from '../components/ShopServices';
 import NewandTrending from '../components/WhatsNewTrending';
 
-const Home = () => {
+
+
+const Home = ({ onAuthClick, username, userType, handleLogout }) => {
   return (
     <>
-      <Navbar />
+      <Navbar 
+        onAuthClick={onAuthClick} 
+        username={username} 
+        userType={userType} 
+        handleLogout={handleLogout} 
+      />
       <Banner />
       <ProductList category="home"/>
       <ShopServices />
